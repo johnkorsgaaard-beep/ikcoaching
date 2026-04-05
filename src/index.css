@@ -91,6 +91,50 @@ body {
   animation: coach-marquee-rtl 48s linear infinite;
 }
 
+/* ── Service card star border animation ── */
+
+@keyframes star-move {
+  0% {
+    top: -4px;
+    left: -4px;
+  }
+  25% {
+    top: -4px;
+    left: calc(100% - 4px);
+  }
+  50% {
+    top: calc(100% - 4px);
+    left: calc(100% - 4px);
+  }
+  75% {
+    top: calc(100% - 4px);
+    left: -4px;
+  }
+  100% {
+    top: -4px;
+    left: -4px;
+  }
+}
+
+.service-card::before {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 0 12px 4px rgba(255, 255, 255, 0.9), 0 0 24px 8px rgba(255, 255, 255, 0.5);
+  opacity: 0;
+  z-index: 10;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+
+.service-card:hover::before {
+  opacity: 1;
+  animation: star-move 2s linear infinite;
+}
+
 /* ── Reduced motion ── */
 
 @media (prefers-reduced-motion: reduce) {

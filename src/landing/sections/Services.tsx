@@ -72,20 +72,18 @@ export default function Services() {
           {OFFERS.map(({ id, title, body, Icon }) => (
             <article
               key={id}
-              className="group relative overflow-hidden rounded-3xl border border-rose-100/80 bg-white/70 p-8 shadow-sm backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-rose-200 hover:shadow-xl hover:shadow-rose-100/50"
+              className="service-card group relative overflow-hidden rounded-3xl bg-gradient-to-br from-rose-400 to-pink-400 p-8 shadow-lg shadow-rose-200/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-rose-300/50"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-rose-50/50 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
-
               <div className="relative">
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-rose-50 ring-1 ring-rose-100">
-                  <Icon className="h-6 w-6 text-rose-400" />
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/20 ring-1 ring-white/30">
+                  <Icon className="h-6 w-6 text-white" />
                 </div>
 
-                <h3 className="mt-6 text-xl font-semibold text-stone-800">
+                <h3 className="mt-6 text-xl font-semibold text-white">
                   {title}
                 </h3>
 
-                <p className="mt-3 text-sm leading-relaxed text-stone-500">
+                <p className="mt-3 text-sm leading-relaxed text-white/80">
                   {body}
                 </p>
               </div>
