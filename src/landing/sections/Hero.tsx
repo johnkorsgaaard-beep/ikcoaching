@@ -6,7 +6,7 @@ export default function Hero() {
           <img
             src="/images/coach/logo.png"
             alt="IK Coaching logo"
-            className="h-14 w-auto mix-blend-multiply sm:h-16 lg:h-20"
+            className="h-14 w-auto mix-blend-darken sm:h-16 lg:h-20"
           />
         </a>
 
@@ -25,10 +25,6 @@ export default function Hero() {
       </header>
 
       <div className="relative z-10 flex flex-1 flex-col items-center justify-center px-6 text-center">
-        <span className="mb-5 inline-block rounded-full border border-rose-200 bg-rose-50 px-4 py-1.5 text-xs font-medium uppercase tracking-widest text-rose-400">
-          Personlig coaching
-        </span>
-
         <h1 className="max-w-3xl text-4xl font-bold leading-tight tracking-tight text-stone-800 sm:text-5xl md:text-6xl lg:text-7xl">
           <span className="block">Din forandring</span>
           <span className="block bg-gradient-to-r from-rose-400 to-pink-400 bg-clip-text text-transparent">
