@@ -1,68 +1,66 @@
 export default function Hero() {
   return (
     <section aria-label="Intro" className="relative min-h-svh flex flex-col">
-      {/* Header */}
       <header className="relative z-20 flex items-center justify-between px-6 py-5 sm:px-10">
         <a href="#" className="flex items-center gap-3">
           <img
             src="/images/coach/logo.png"
             alt="IK Coaching logo"
-            className="h-10 w-auto sm:h-12"
+            className="h-14 w-auto mix-blend-multiply sm:h-16 lg:h-20"
           />
         </a>
 
+        <nav className="hidden items-center gap-8 text-sm font-medium text-stone-500 sm:flex">
+          <a href="#om" className="transition-colors hover:text-rose-400">Om mig</a>
+          <a href="#tilbud" className="transition-colors hover:text-rose-400">Tilbud</a>
+          <a href="#udtalelser" className="transition-colors hover:text-rose-400">Udtalelser</a>
+        </nav>
+
         <a
           href="#kontakt"
-          className="rounded-full border border-white/15 px-5 py-2 text-sm font-medium text-zinc-200 transition-all hover:border-rose-400/40 hover:text-white"
+          className="rounded-full bg-rose-400 px-5 py-2 text-sm font-medium text-white shadow-sm transition-all hover:bg-rose-500 hover:shadow-md"
         >
           Kontakt
         </a>
       </header>
 
-      {/* Center content */}
       <div className="relative z-10 flex flex-1 flex-col items-center justify-center px-6 text-center">
-        <h1 className="max-w-3xl text-4xl font-bold leading-tight tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
+        <span className="mb-5 inline-block rounded-full border border-rose-200 bg-rose-50 px-4 py-1.5 text-xs font-medium uppercase tracking-widest text-rose-400">
+          Personlig coaching
+        </span>
+
+        <h1 className="max-w-3xl text-4xl font-bold leading-tight tracking-tight text-stone-800 sm:text-5xl md:text-6xl lg:text-7xl">
           <span className="block">Din forandring</span>
-          <span className="block text-rose-400">starter her.</span>
+          <span className="block bg-gradient-to-r from-rose-400 to-pink-400 bg-clip-text text-transparent">
+            starter her.
+          </span>
         </h1>
 
-        <p className="mt-6 max-w-xl text-lg text-white/65 sm:text-xl">
+        <p className="mt-6 max-w-xl text-lg leading-relaxed text-stone-500 sm:text-xl">
           Personlig coaching med fokus på dig, din krop og dine mål.
           Sammen skaber vi de resultater, du fortjener.
         </p>
 
         <a
           href="#kontakt"
-          className="mt-10 inline-flex items-center rounded-full bg-rose-400 px-8 py-3.5 text-base font-semibold text-black shadow-[0_0_32px_rgba(251,113,133,0.35)] transition-all hover:bg-rose-300 hover:scale-105 hover:shadow-[0_0_48px_rgba(251,113,133,0.45)]"
+          className="mt-10 inline-flex items-center gap-2 rounded-full bg-rose-400 px-8 py-3.5 text-base font-semibold text-white shadow-lg shadow-rose-200/50 transition-all hover:bg-rose-500 hover:scale-105 hover:shadow-xl hover:shadow-rose-300/40"
         >
           Kom i gang
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="h-4 w-4">
+            <path fillRule="evenodd" d="M3 10a.75.75 0 0 1 .75-.75h10.638l-3.96-3.72a.75.75 0 1 1 1.024-1.1l5.25 4.93a.75.75 0 0 1 0 1.1l-5.25 4.93a.75.75 0 0 1-1.024-1.1l3.96-3.72H3.75A.75.75 0 0 1 3 10Z" clipRule="evenodd" />
+          </svg>
         </a>
       </div>
 
-      {/* Footer strip */}
-      <div className="relative z-10 flex items-center justify-between px-6 py-6 sm:px-10">
-        <span className="text-[11px] font-medium uppercase tracking-[0.25em] text-zinc-500">
-          IK Coaching
-        </span>
-
+      <div className="relative z-10 flex items-center justify-center px-6 py-8">
         <a
-          href="#kontakt"
-          className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 text-zinc-400 transition-colors hover:border-rose-400/30 hover:text-rose-400"
-          aria-label="Skriv en besked"
+          href="#om"
+          className="flex flex-col items-center gap-2 text-stone-400 transition-colors hover:text-rose-400"
+          aria-label="Scroll ned"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth={1.5}
-            className="h-4 w-4"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M8.625 12a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H8.25m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H12m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 0 1-2.555-.337A5.972 5.972 0 0 1 5.41 20.97a5.969 5.969 0 0 1-.474-.065 4.48 4.48 0 0 0 .978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25Z"
-            />
+          <span className="text-[10px] font-medium uppercase tracking-[0.2em]">Scroll</span>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="h-4 w-4 animate-bounce">
+            <path fillRule="evenodd" d="M10 3a.75.75 0 0 1 .75.75v10.638l3.96-3.96a.75.75 0 1 1 1.06 1.06l-5.25 5.25a.75.75 0 0 1-1.06 0l-5.25-5.25a.75.75 0 1 1 1.06-1.06l3.96 3.96V3.75A.75.75 0 0 1 10 3Z" clipRule="evenodd" />
           </svg>
         </a>
       </div>

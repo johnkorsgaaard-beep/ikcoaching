@@ -50,39 +50,42 @@ export default function Services() {
     <section
       id="tilbud"
       aria-labelledby="services-heading"
-      className="border-b border-white/10 py-24 sm:py-32"
+      className="py-24 sm:py-32"
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <div className="text-center">
+          <span className="mb-3 inline-block rounded-full border border-rose-200 bg-rose-50 px-4 py-1.5 text-xs font-medium uppercase tracking-widest text-rose-400">
+            Services
+          </span>
           <h2
             id="services-heading"
-            className="text-3xl font-bold tracking-tight sm:text-4xl"
+            className="text-3xl font-bold tracking-tight text-stone-800 sm:text-4xl"
           >
             Hvad jeg tilbyder
           </h2>
-          <p className="mt-4 text-lg text-zinc-400">
+          <p className="mt-4 text-lg text-stone-500">
             Coaching der er lige så unik som dig.
           </p>
         </div>
 
-        <div className="mt-16 grid gap-6 sm:grid-cols-2 md:grid-cols-3">
+        <div className="mt-16 grid gap-8 sm:grid-cols-2 md:grid-cols-3">
           {OFFERS.map(({ id, title, body, Icon }) => (
             <article
               key={id}
-              className="group relative overflow-hidden rounded-2xl border border-white/[0.09] bg-white/[0.04] p-8 backdrop-blur-xl transition-all duration-300 hover:-translate-y-0.5 hover:border-rose-400/40 hover:shadow-[0_0_40px_rgba(251,113,133,0.08),0_8px_32px_rgba(0,0,0,0.3)]"
+              className="group relative overflow-hidden rounded-3xl border border-rose-100/80 bg-white/70 p-8 shadow-sm backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-rose-200 hover:shadow-xl hover:shadow-rose-100/50"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-rose-400/[0.03] to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
+              <div className="absolute inset-0 bg-gradient-to-br from-rose-50/50 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
 
               <div className="relative">
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-white/10 bg-white/[0.06]">
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-rose-50 ring-1 ring-rose-100">
                   <Icon className="h-6 w-6 text-rose-400" />
                 </div>
 
-                <h3 className="mt-6 text-xl font-semibold text-zinc-100">
+                <h3 className="mt-6 text-xl font-semibold text-stone-800">
                   {title}
                 </h3>
 
-                <p className="mt-3 text-sm leading-relaxed text-zinc-400">
+                <p className="mt-3 text-sm leading-relaxed text-stone-500">
                   {body}
                 </p>
               </div>

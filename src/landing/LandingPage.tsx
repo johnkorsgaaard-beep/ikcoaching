@@ -9,7 +9,7 @@ import Footer from "./sections/Footer";
 
 export default function LandingPage() {
   return (
-    <div className="relative min-h-svh antialiased text-zinc-100">
+    <div className="relative min-h-svh antialiased text-stone-800">
       <PageBackground />
       <div className="relative z-10">
         <Hero />
