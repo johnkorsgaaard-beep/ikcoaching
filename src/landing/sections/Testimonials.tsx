@@ -132,24 +132,6 @@ function TestimonialCard({
   );
 }
 
-function CoachFigure() {
-  return (
-    <figure className="flex items-center justify-center" aria-hidden="true">
-      <img
-        src="/images/coach/coach-photo.png"
-        alt=""
-        className="h-64 w-auto rounded-2xl object-cover shadow-xl shadow-rose-200/30 sm:h-80 lg:h-96"
-        style={{
-          maskImage:
-            "linear-gradient(to bottom, black 75%, transparent 100%)",
-          WebkitMaskImage:
-            "linear-gradient(to bottom, black 75%, transparent 100%)",
-        }}
-      />
-    </figure>
-  );
-}
-
 export default function Testimonials() {
   const sectionRef = useRef<HTMLElement>(null);
 
@@ -181,9 +163,29 @@ export default function Testimonials() {
       ref={sectionRef}
       id="udtalelser"
       aria-labelledby="testimonials-heading"
-      className="py-24 sm:py-32"
+      className="relative overflow-hidden py-24 sm:py-32"
     >
-      <div className="mx-auto max-w-7xl px-6 lg:px-10">
+      {/* Right-side background image with fade to left */}
+      <div
+        className="absolute inset-y-0 right-0 z-0 w-[50%] lg:w-[40%]"
+        aria-hidden="true"
+        style={{
+          maskImage:
+            "linear-gradient(to left, black 5%, transparent 85%), linear-gradient(to bottom, transparent 0%, black 8%, black 92%, transparent 100%)",
+          WebkitMaskImage:
+            "linear-gradient(to left, black 5%, transparent 85%), linear-gradient(to bottom, transparent 0%, black 8%, black 92%, transparent 100%)",
+          maskComposite: "intersect",
+          WebkitMaskComposite: "source-in",
+        }}
+      >
+        <img
+          src="/images/coach/testimonial-bg.png"
+          alt=""
+          className="h-full w-full object-cover object-[center_20%] opacity-[0.25]"
+        />
+      </div>
+
+      <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-10">
         <div className="text-center">
           <span className="mb-3 inline-block rounded-full border border-rose-200 bg-rose-50 px-4 py-1.5 text-xs font-medium uppercase tracking-widest text-rose-400">
             Udtalelser
@@ -201,26 +203,23 @@ export default function Testimonials() {
 
         {/* Mobile layout */}
         <div className="mt-16 flex flex-col items-center gap-6 lg:hidden">
-          <CoachFigure />
           {TESTIMONIALS.map((t, i) => (
             <TestimonialCard key={i} {...t} />
           ))}
         </div>
 
-        {/* Desktop layout */}
+        {/* Desktop layout — two columns, no center image */}
         <div className="mt-16 hidden lg:block">
           <div className="mx-auto mb-8 max-w-2xl">
             {top[0] && <TestimonialCard {...top[0]} />}
           </div>
 
-          <div className="grid grid-cols-3 items-start gap-8">
+          <div className="grid grid-cols-2 items-start gap-8">
             <div className="space-y-6">
               {leftCol.map((t, i) => (
                 <TestimonialCard key={`l-${i}`} {...t} />
               ))}
             </div>
-
-            <CoachFigure />
 
             <div className="space-y-6">
               {rightCol.map((t, i) => (

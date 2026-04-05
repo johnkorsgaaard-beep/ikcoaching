@@ -58,9 +58,20 @@ export default function Cta() {
     <section
       id="kontakt"
       aria-labelledby="cta-heading"
-      className="py-24 sm:py-32"
+      className="relative overflow-hidden py-24 sm:py-32"
     >
-      <div className="mx-auto max-w-5xl px-6 lg:px-10">
+      {/* Background image */}
+      <div className="absolute inset-0 z-0" aria-hidden="true">
+        <img
+          src="/images/coach/cta-bg.png"
+          alt=""
+          className="h-full w-full object-cover object-center opacity-[0.10]"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#fdf6f2] via-transparent to-transparent" style={{ height: "30%" }} />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#fdf6f2]/60 via-transparent to-transparent" />
+      </div>
+
+      <div className="relative z-10 mx-auto max-w-5xl px-6 lg:px-10">
         <div className="flex flex-col items-center gap-12 lg:flex-row lg:items-center lg:gap-20">
           {/* Left text — desktop only */}
           <div className="hidden text-center lg:block lg:flex-1 lg:text-left">

@@ -15,10 +15,15 @@ export default function LandingPage() {
         <Hero />
         <div className="relative">
           <About />
+          <div className="mx-auto max-w-7xl px-6 lg:px-10"><hr className="border-t border-rose-200/60" /></div>
           <CoachPhotoRail />
+          <div className="mx-auto max-w-7xl px-6 lg:px-10"><hr className="border-t border-rose-200/60" /></div>
           <Services />
+          <div className="mx-auto max-w-7xl px-6 lg:px-10"><hr className="border-t border-rose-200/60" /></div>
           <Testimonials />
+          <div className="mx-auto max-w-7xl px-6 lg:px-10"><hr className="border-t border-rose-200/60" /></div>
           <Cta />
+          <div className="mx-auto max-w-7xl px-6 lg:px-10"><hr className="border-t border-rose-200/60" /></div>
           <Footer />
         </div>
       </div>
