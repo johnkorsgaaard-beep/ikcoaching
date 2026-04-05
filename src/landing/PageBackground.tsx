@@ -4,6 +4,25 @@ export default function PageBackground() {
       {/* Base warm cream */}
       <div className="absolute inset-0 bg-[#fdf6f2]" />
 
+      {/* Coach side photo — left edge, full height, fading out to the right */}
+      <div
+        className="absolute inset-y-0 left-0 w-[45%] sm:w-[35%] lg:w-[30%]"
+        style={{
+          maskImage:
+            "linear-gradient(to right, black 10%, transparent 100%), linear-gradient(to bottom, transparent 0%, black 5%, black 95%, transparent 100%)",
+          WebkitMaskImage:
+            "linear-gradient(to right, black 10%, transparent 100%), linear-gradient(to bottom, transparent 0%, black 5%, black 95%, transparent 100%)",
+          maskComposite: "intersect",
+          WebkitMaskComposite: "source-in",
+        }}
+      >
+        <img
+          src="/images/coach/side-bg.png"
+          alt=""
+          className="h-full w-full object-cover object-top opacity-[0.12]"
+        />
+      </div>
+
       {/* Soft pink blob top-right */}
       <div
         className="absolute inset-0"
