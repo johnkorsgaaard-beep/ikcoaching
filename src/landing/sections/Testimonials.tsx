@@ -109,7 +109,7 @@ function TestimonialCard({
 
   return (
     <div
-      className={`testimonial-fly testimonial-fly--${fly} relative overflow-hidden rounded-2xl border border-rose-100/80 bg-white/70 shadow-sm backdrop-blur-sm ${sizeClasses[cardSize]}`}
+      className={`testimonial-fly testimonial-fly--${fly} relative overflow-hidden rounded-2xl border-2 border-rose-300 bg-white/70 shadow-sm backdrop-blur-sm ${sizeClasses[cardSize]}`}
       style={{ animationDelay: delay }}
     >
       <span
@@ -187,17 +187,34 @@ export default function Testimonials() {
 
       <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-10">
         <div className="text-center">
-          <span className="mb-3 inline-block rounded-full border border-rose-200 bg-rose-50 px-4 py-1.5 text-xs font-medium uppercase tracking-widest text-rose-400">
+          <span className="mb-3 inline-block rounded-full border border-rose-300 bg-rose-400 px-4 py-1.5 text-xs font-medium uppercase tracking-widest text-white shadow-md shadow-rose-200/40">
             Udtalelser
           </span>
           <h2
             id="testimonials-heading"
             className="text-3xl font-bold tracking-tight text-stone-800 sm:text-4xl"
           >
-            Det siger mine klienter
+            Det siger mine <span className="text-rose-400">klienter</span>
           </h2>
           <p className="mt-4 text-lg text-stone-500">
-            Ægte resultater fra ægte mennesker.
+            Ægte resultater fra ægte{" "}
+            <span className="relative inline-block">
+              mennesker
+              <svg
+                className="absolute -bottom-2 left-0 w-full"
+                viewBox="0 0 120 8"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                preserveAspectRatio="none"
+              >
+                <path
+                  d="M2 5.5C20 2 40 3.5 60 4.5C80 5.5 100 3 118 5"
+                  stroke="#fb7185"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                />
+              </svg>
+            </span>.
           </p>
         </div>
 
