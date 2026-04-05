@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/inbound-lead",
+      "destination": "https://www.shreddedapp.io/api/leads/inbound/REPLACE_WITH_TOKEN"
+    }
+  ]
+}

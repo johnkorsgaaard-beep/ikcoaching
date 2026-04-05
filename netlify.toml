@@ -1,0 +1,5 @@
+[[redirects]]
+  from = "/api/inbound-lead"
+  to = "https://www.shreddedapp.io/api/leads/inbound/REPLACE_WITH_TOKEN"
+  status = 200
+  force = true

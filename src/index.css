@@ -1,0 +1,121 @@
+@import "tailwindcss";
+
+body {
+  margin: 0;
+  min-height: 100svh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  min-height: 100svh;
+}
+
+/* ── Testimonial fly-in animations ── */
+
+@keyframes fly-up {
+  from {
+    opacity: 0;
+    transform: translateY(80px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes fly-left {
+  from {
+    opacity: 0;
+    transform: translateX(-80px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes fly-right {
+  from {
+    opacity: 0;
+    transform: translateX(80px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes fly-down {
+  from {
+    opacity: 0;
+    transform: translateY(-80px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.testimonial-fly {
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+.testimonials-visible .testimonial-fly--up {
+  animation: fly-up 1.25s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+.testimonials-visible .testimonial-fly--left {
+  animation: fly-left 1.25s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+.testimonials-visible .testimonial-fly--right {
+  animation: fly-right 1.25s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+.testimonials-visible .testimonial-fly--down {
+  animation: fly-down 1.25s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* ── Coach photo rail marquee ── */
+
+@keyframes coach-marquee-rtl {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.coach-photo-rail-track {
+  animation: coach-marquee-rtl 48s linear infinite;
+}
+
+/* ── Reduced motion ── */
+
+@media (prefers-reduced-motion: reduce) {
+  .coach-photo-rail-duplicate {
+    display: none;
+  }
+
+  .coach-photo-rail-track {
+    animation: none;
+  }
+
+  .testimonial-fly {
+    opacity: 1;
+    transform: none;
+  }
+
+  .testimonials-visible .testimonial-fly--up,
+  .testimonials-visible .testimonial-fly--left,
+  .testimonials-visible .testimonial-fly--right,
+  .testimonials-visible .testimonial-fly--down {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .hero-bg-video {
+    display: none;
+  }
+}
