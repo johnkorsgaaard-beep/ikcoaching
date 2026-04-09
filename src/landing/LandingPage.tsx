@@ -1,5 +1,4 @@
 import PageBackground from "./PageBackground";
-import Hero from "./sections/Hero";
 import About from "./sections/About";
 import CoachPhotoRail from "./sections/CoachPhotoRail";
 import Services from "./sections/Services";
