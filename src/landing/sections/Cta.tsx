@@ -128,7 +128,7 @@ export default function Cta() {
       source: "ikcoaching-website",
     };
 
-    const url = "https://www.shreddedapp.io/api/leads/inbound/lead_zgdatk3jyuql98dqsko5hkfw";
+    const url = "/api/inbound-lead";
 
     try {
       const res = await fetch(url, {
