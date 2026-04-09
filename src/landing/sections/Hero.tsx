@@ -1,15 +1,6 @@
 export default function Hero() {
   return (
     <section aria-label="Intro" className="relative min-h-svh flex flex-col">
-      <header className="relative z-20 flex items-center justify-end px-6 py-5 sm:px-10">
-        <a
-          href="#kontakt"
-          className="rounded-full bg-rose-400 px-5 py-2 text-sm font-medium text-white shadow-sm transition-all hover:bg-rose-500 hover:shadow-md"
-        >
-          Lad os snakke sammen😍
-        </a>
-      </header>
-
       <div className="relative z-10 flex flex-1 flex-col items-center justify-center px-6 text-center">
         <img
           src="/images/coach/logo-clean.png"

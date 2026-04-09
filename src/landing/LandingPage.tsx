@@ -1,5 +1,4 @@
 import PageBackground from "./PageBackground";
-import Hero from "./sections/Hero";
 import About from "./sections/About";
 import CoachPhotoRail from "./sections/CoachPhotoRail";
 import Services from "./sections/Services";
@@ -12,7 +11,7 @@ export default function LandingPage() {
     <div className="relative min-h-svh antialiased text-stone-800">
       <PageBackground />
       <div className="relative z-10">
-        <Hero />
+        <Cta />
         <div className="relative">
           <About />
           <div className="mx-auto max-w-7xl px-6 lg:px-10"><hr className="border-t border-rose-200/60" /></div>
@@ -21,8 +20,6 @@ export default function LandingPage() {
           <Services />
           <div className="mx-auto max-w-7xl px-6 lg:px-10"><hr className="border-t border-rose-200/60" /></div>
           <Testimonials />
-          <div className="mx-auto max-w-7xl px-6 lg:px-10"><hr className="border-t border-rose-200/60" /></div>
-          <Cta />
           <div className="mx-auto max-w-7xl px-6 lg:px-10"><hr className="border-t border-rose-200/60" /></div>
           <Footer />
         </div>

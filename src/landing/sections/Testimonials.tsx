@@ -1,136 +1,10 @@
 import { useEffect, useRef } from "react";
 
-interface Testimonial {
-  quote: string;
-  name: string;
-  age: number;
-  featured: boolean;
-  fly: "up" | "left" | "right" | "down";
-  cardSize: "sm" | "md" | "lg";
-  delay: string;
-}
-
-const TESTIMONIALS: Testimonial[] = [
-  {
-    quote:
-      "Jeg har tabt 3,3 kg på bare 6 uger — og det bedste er, at det føles helt naturligt. Ida forstår virkelig, hvad der virker for mig.",
-    name: "Sofie",
-    age: 26,
-    featured: true,
-    fly: "up",
-    cardSize: "lg",
-    delay: "0s",
-  },
-  {
-    quote:
-      "2,1 kg på 4 uger, og jeg har aldrig haft det bedre! Idas coaching er personlig, motiverende og realistisk.",
-    name: "Mathilde",
-    age: 23,
-    featured: false,
-    fly: "left",
-    cardSize: "md",
-    delay: "0.1s",
-  },
-  {
-    quote:
-      "Jeg mistede 2,8 kg på 3 uger. Men det vigtigste er, at jeg har fået et helt nyt forhold til træning og kost.",
-    name: "Emma",
-    age: 29,
-    featured: false,
-    fly: "right",
-    cardSize: "md",
-    delay: "0.15s",
-  },
-  {
-    quote:
-      "Ida har lært mig, at det ikke handler om perfektion, men om fremskridt. Jeg er stærkere end nogensinde.",
-    name: "Caroline",
-    age: 31,
-    featured: false,
-    fly: "left",
-    cardSize: "sm",
-    delay: "0.2s",
-  },
-  {
-    quote:
-      "Det hele har ændret sig — min energi, min selvtillid og min krop. Jeg kan varmt anbefale IK Coaching.",
-    name: "Laura",
-    age: 24,
-    featured: false,
-    fly: "right",
-    cardSize: "sm",
-    delay: "0.25s",
-  },
-  {
-    quote:
-      "Endelig en coach der forstår, at livet ikke altid er perfekt. Ida tilpasser altid planen, så den passer til min hverdag.",
-    name: "Freja",
-    age: 27,
-    featured: true,
-    fly: "down",
-    cardSize: "lg",
-    delay: "0.3s",
-  },
-  {
-    quote:
-      "Jeg havde prøvet alt, men intet virkede — indtil jeg fandt IK Coaching. Nu ser jeg endelig resultater, der holder.",
-    name: "Maja",
-    age: 25,
-    featured: false,
-    fly: "left",
-    cardSize: "md",
-    delay: "0.35s",
-  },
-  {
-    quote:
-      "Den bedste investering jeg har lavet i mig selv. Ida er professionel, venlig og utroligt dygtig.",
-    name: "Nanna",
-    age: 28,
-    featured: false,
-    fly: "right",
-    cardSize: "sm",
-    delay: "0.4s",
-  },
+const REVIEWS = [
+  "Jeg var superglad for mit forløb hos Ida! Jeg følte mig set og hørt og virkelig forstået. 🖤\nOg vildt fedt med en plan og program skræddersyet til min hverdag og smag! ✨\n\n+ seriøse glute gainzzzz",
+  "Jeg er utrolig taknemmelig for at have Ida som coach. Vores samarbejde fungerer virkelig godt, og det gør en kæmpe forskel for mig. Jeg har tidligere haft en anden coach, hvor kemien ikke helt var der og det har virkelig fået mig til at sætte endnu mere pris på Ida. Hun er altid støttende, nærværende og tilgængelig, og det har været helt afgørende for mit forløb. Jeg er simpelthen så tilfreds og glæder mig til resten af rejsen hos hende 😍💪",
+  "Jeg har haft et virkelig godt samarbejde med Ida ❤️\n\nHun er altid hurtig til at svare, når man skriver til hende, og man føler sig virkelig set og taget seriøst. Det jeg især sætter pris på er, at hun også selv tjekker ind – selv når man ikke lige har fået skrevet først. Det viser bare, hvor engageret hun er i sine klienter 💯\n\nHun er god til at tilpasse forløbet til ens hverdag og behov, og hun er både motiverende og ærlig på den helt rigtige måde. Man føler sig tryg, og hun formår virkelig at holde en på sporet – også på de dage, hvor motivationen ikke er der.\n\nKan klart anbefale Ida, hvis man vil have en coach, der går op i én og følger en hele vejen 💪",
 ];
-
-function TestimonialCard({
-  quote,
-  name,
-  age,
-  fly,
-  cardSize,
-  delay,
-}: Testimonial) {
-  const sizeClasses = {
-    sm: "p-6",
-    md: "p-7",
-    lg: "p-8",
-  };
-
-  return (
-    <div
-      className={`testimonial-fly testimonial-fly--${fly} relative overflow-hidden rounded-2xl border-2 border-rose-300 bg-white/70 shadow-sm backdrop-blur-sm ${sizeClasses[cardSize]}`}
-      style={{ animationDelay: delay }}
-    >
-      <span
-        className="absolute -top-2 left-5 text-5xl font-serif text-rose-300/40 select-none"
-        aria-hidden="true"
-      >
-        &ldquo;
-      </span>
-
-      <blockquote className="relative mt-4 text-sm leading-relaxed text-stone-600 sm:text-base">
-        {quote}
-      </blockquote>
-
-      <footer className="mt-5 text-xs text-stone-400">
-        <span className="font-medium text-stone-700">{name}</span>
-        <span className="mx-1.5">&middot;</span>
-        <span>{age} år</span>
-      </footer>
-    </div>
-  );
-}
 
 export default function Testimonials() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -153,11 +27,6 @@ export default function Testimonials() {
     return () => observer.disconnect();
   }, []);
 
-  const top = TESTIMONIALS.filter((t) => t.featured);
-  const middle = TESTIMONIALS.filter((t) => !t.featured);
-  const leftCol = middle.filter((_, i) => i % 2 === 0);
-  const rightCol = middle.filter((_, i) => i % 2 === 1);
-
   return (
     <section
       ref={sectionRef}
@@ -165,7 +34,6 @@ export default function Testimonials() {
       aria-labelledby="testimonials-heading"
       className="relative overflow-hidden py-24 sm:py-32"
     >
-      {/* Right-side background image with fade to left */}
       <div
         className="absolute inset-y-0 right-0 z-0 w-[50%] lg:w-[40%]"
         aria-hidden="true"
@@ -181,7 +49,7 @@ export default function Testimonials() {
         <img
           src="/images/coach/testimonial-bg.png"
           alt=""
-          className="h-full w-full object-cover object-[center_20%] opacity-[0.25]"
+          className="h-full w-full object-cover object-[center_20%] opacity-[0.55]"
         />
       </div>
 
@@ -194,7 +62,7 @@ export default function Testimonials() {
             id="testimonials-heading"
             className="text-3xl font-bold tracking-tight text-stone-800 sm:text-4xl"
           >
-            Det siger mine <span className="text-rose-400">klienter</span>
+            Små uddrag fra nogle af mine <span className="text-rose-400">klienter</span>
           </h2>
           <p className="mt-4 text-lg text-stone-500">
             Ægte resultater fra ægte{" "}
@@ -218,38 +86,24 @@ export default function Testimonials() {
           </p>
         </div>
 
-        {/* Mobile layout */}
-        <div className="mt-16 flex flex-col items-center gap-6 lg:hidden">
-          {TESTIMONIALS.map((t, i) => (
-            <TestimonialCard key={i} {...t} />
+        <div className="mt-16 grid grid-cols-1 items-start gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {REVIEWS.map((quote, i) => (
+            <div
+              key={i}
+              className="testimonial-fly testimonial-fly--up relative overflow-hidden rounded-2xl bg-gradient-to-br from-rose-400 to-pink-400 p-6 shadow-lg shadow-rose-200/40 sm:p-8"
+              style={{ animationDelay: `${i * 0.12}s` }}
+            >
+              <span
+                className="absolute -top-2 left-5 text-6xl font-serif text-white/20 select-none"
+                aria-hidden="true"
+              >
+                &ldquo;
+              </span>
+              <blockquote className="relative mt-4 text-sm leading-relaxed text-white/95 whitespace-pre-line sm:text-[15px]">
+                {quote}
+              </blockquote>
+            </div>
           ))}
-        </div>
-
-        {/* Desktop layout — two columns, no center image */}
-        <div className="mt-16 hidden lg:block">
-          <div className="mx-auto mb-8 max-w-2xl">
-            {top[0] && <TestimonialCard {...top[0]} />}
-          </div>
-
-          <div className="grid grid-cols-2 items-start gap-8">
-            <div className="space-y-6">
-              {leftCol.map((t, i) => (
-                <TestimonialCard key={`l-${i}`} {...t} />
-              ))}
-            </div>
-
-            <div className="space-y-6">
-              {rightCol.map((t, i) => (
-                <TestimonialCard key={`r-${i}`} {...t} />
-              ))}
-            </div>
-          </div>
-
-          {top[1] && (
-            <div className="mx-auto mt-8 max-w-2xl">
-              <TestimonialCard {...top[1]} />
-            </div>
-          )}
         </div>
       </div>
     </section>
