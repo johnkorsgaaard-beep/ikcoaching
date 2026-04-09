@@ -7,7 +7,7 @@ export default defineConfig(({ mode }) => {
 
   const shreddedUrl =
     env.VITE_SHREDDED_LEADS_URL ||
-    "https://www.shreddedapp.io/api/leads/inbound/REPLACE_WITH_TOKEN";
+    "https://www.shreddedapp.io/api/leads/inbound/lead_zgdatk3jyuql98dqsko5hkfw";
 
   return {
     plugins: [react(), tailwindcss()],

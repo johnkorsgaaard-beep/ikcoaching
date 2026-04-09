@@ -128,7 +128,7 @@ export default function Cta() {
       source: "ikcoaching-website",
     };
 
-    const url = "https://www.shreddedapp.io/api/leads/inbound/lead_zgdatk3jyuql98dqsko5hkfw";
+    const url = "/api/inbound-lead";
 
     try {
       const res = await fetch(url, {
@@ -516,7 +516,7 @@ export default function Cta() {
                 </div>
 
                 {/* Form area */}
-                <div className="px-4 pb-6 pt-4">
+                <div className="px-4 pb-6 pt-4 min-h-[280px]">
                   {step <= TOTAL_STEPS && (
                     <div className="mb-2.5">
                       <div className="h-[3px] w-full overflow-hidden rounded-full bg-rose-100">
